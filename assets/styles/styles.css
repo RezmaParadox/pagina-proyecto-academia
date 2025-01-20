@@ -1,0 +1,903 @@
+:root {
+  --primary: #045694;
+  --secondary: #f2f2f2;
+  --tertiary: #03122B;
+  --button-primary: #0a84ff;
+  scroll-padding: 100px;
+  --background-color:#eef2fb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 23px;
+  font-style: normal;
+}
+
+img {
+  border-radius: 7px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+i {
+  color: var(--secondary);
+}
+
+button {
+  cursor: pointer;
+}
+
+.myheader {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary);
+}
+.myheader .logo {
+  display: flex;
+}
+.myheader .logo .title-logo {
+  color: var(--secondary);
+  font-size: 45px;
+  font-weight: bold;
+}
+.myheader .balon-animation {
+  position: relative;
+  height: 50px;
+  width: 70px;
+}
+.myheader .balon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.myheader label {
+  display: none;
+  font-size: 30px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.myheader label i {
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.myheader label .fa-bars {
+  opacity: 1;
+  position: relative;
+}
+.myheader label .fa-xmark {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+}
+.myheader input {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+}
+.myheader input:checked ~ .mymenu {
+  transform: translateX(0);
+}
+.myheader .mymenu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.myheader .mymenu ul {
+  display: flex;
+  gap: 20px;
+}
+.myheader .mymenu ul li {
+  list-style: none;
+}
+.myheader .mymenu ul li a {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.myheader .mymenu ul li a:hover {
+  color: rgb(189, 193, 195);
+}
+.myheader .mymenu .icons-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.myheader .mymenu .icons-menu li {
+  list-style: none;
+}
+.myheader .mymenu .icons-menu li a {
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.myheader .mymenu .icons-menu li a:hover {
+  color: rgb(189, 193, 195);
+}
+
+main {
+  padding: 20px;
+}
+main h2 {
+  font-size: 30px;
+}
+main section {
+  margin-bottom: 50px;
+}
+
+#inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#inicio .banner-container {
+  display: flex;
+  background-color: black;
+  width: calc(100% + 40px);
+  height: 500px;
+  overflow: hidden;
+}
+#inicio .banner-container .promocion {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#inicio .banner-container .promocion video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#inicio .banner-container .promocion .promocion-content {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.582);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+#inicio .banner-container .promocion h2 {
+  color: white;
+  font-size: 30px;
+}
+#inicio .banner-container .promocion p {
+  color: white;
+  font-size: 20px;
+}
+#inicio .banner-container .promocion button {
+  background-color: var(--button-primary);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+}
+#inicio .banner-container .promocion button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+#inicio .banner-container .slider-container {
+  position: relative;
+  overflow: hidden;
+}
+#inicio .banner-container .slider-container .slider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+#inicio .banner-container .slider-container .slider .card {
+  min-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+#inicio .banner-container .slider-container .slider .card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+#inicio .banner-container .slider-container .slider .card .card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to top, rgba(14, 91, 163, 0.8), transparent);
+}
+#inicio .banner-container .slider-container .slider .card .card-text h3,
+#inicio .banner-container .slider-container .slider .card .card-text p {
+  margin: 10px 0;
+  font-family: Arial, sans-serif;
+  color: var(--secondary);
+}
+#inicio .banner-container .slider-container .prev-btn,
+#inicio .banner-container .slider-container .next-btn {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(10, 132, 255, 0.5960784314);
+  color: white;
+  font-size: 30px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+#inicio .banner-container .slider-container .prev-btn {
+  left: 10px;
+}
+#inicio .banner-container .slider-container .next-btn {
+  right: 10px;
+}
+#inicio .banner-container .slider-container .prev-btn:hover,
+#inicio .banner-container .slider-container .next-btn:hover {
+  background-color: var(--button-primary);
+}
+
+.title-section {
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+#noticias .list-noticias {
+  margin-bottom: 50px;
+}
+#noticias ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+#noticias figure {
+  overflow: hidden;
+  border-radius: 7px;
+}
+#noticias img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+#noticias .noticia-principal {
+  width: 100%;
+  max-width: 530px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#noticias .noticia-principal img {
+  width: 100%;
+  max-width: 530px;
+  height: 310px;
+  display: block;
+  border-radius: 7px;
+}
+#noticias .list-noticias-secundarias {
+  width: 100%;
+  max-width: 720px;
+}
+#noticias .list-noticias-secundarias ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#noticias .noticia-secundaria {
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#noticias .noticia-secundaria img {
+  width: 270px;
+  height: 170px;
+  display: block;
+  border-radius: 7px;
+}
+
+.streaming {
+  margin-top: 100px;
+  background-image: url("/Ejercicio pagina/assets/images/fifaplus_ifa_16x9.jpg");
+  background-size: cover;
+  width: calc(100% + 40px);
+  margin: -20px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.streaming .content-streaming {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  gap: 20px;
+}
+.streaming h2 {
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 60px;
+}
+.streaming p {
+  color: var(--secondary);
+  font-size: 23px;
+}
+.streaming button {
+  color: var(--secondary);
+  background: transparent;
+  border: 3px solid var(--secondary);
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 200px;
+  margin: auto;
+  font-size: 18px;
+  font-weight: bold;
+}
+.streaming button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+#equipos ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#equipos ol li {
+  display: flex;
+  gap: 10px;
+}
+
+#jugadores .slider-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  max-width: 300px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+#jugadores .slider-container .slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+#jugadores .slider-container .slider .card {
+  min-width: 300px;
+  height: 400px;
+  background: linear-gradient(145deg, #ffd700, #f0c420);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  -webkit-clip-path: polygon(50% 0%, 80% 10%, 100% 15%, 100% 85%, 85% 90%, 50% 100%, 0% 85%, 0% 75%, 0% 15%, 20% 10%);
+          clip-path: polygon(50% 0%, 80% 10%, 100% 15%, 100% 85%, 85% 90%, 50% 100%, 0% 85%, 0% 75%, 0% 15%, 20% 10%);
+}
+#jugadores .slider-container .slider .card img {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+}
+#jugadores .slider-container .slider .card .card-text {
+  background-color: rgba(255, 255, 255, 0.631372549);
+}
+#jugadores .slider-container .slider .card .card-text h3,
+#jugadores .slider-container .slider .card .card-text p {
+  margin: 10px 0;
+  font-family: Arial, sans-serif;
+}
+#jugadores .slider-container .prev-btn,
+#jugadores .slider-container .next-btn {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(10, 132, 255, 0.5960784314);
+  color: white;
+  font-size: 30px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+#jugadores .slider-container .prev-btn {
+  left: 10px;
+}
+#jugadores .slider-container .next-btn {
+  right: 10px;
+}
+#jugadores .slider-container .prev-btn:hover,
+#jugadores .slider-container .next-btn:hover {
+  background-color: var(--button-primary);
+}
+#jugadores table {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#jugadores table thead {
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+}
+#jugadores table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+#clasificaciones .clasificaciones-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina, #clasificaciones .clasificaciones-container .clasificacion-femenina {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina table, #clasificaciones .clasificaciones-container .clasificacion-femenina table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina table th, #clasificaciones .clasificaciones-container .clasificacion-masculina table td, #clasificaciones .clasificaciones-container .clasificacion-femenina table th, #clasificaciones .clasificaciones-container .clasificacion-femenina table td {
+  padding: 10px;
+  text-align: center;
+  border: none;
+  border-radius: 12px;
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina table th .fa-arrow-up, #clasificaciones .clasificaciones-container .clasificacion-masculina table td .fa-arrow-up, #clasificaciones .clasificaciones-container .clasificacion-femenina table th .fa-arrow-up, #clasificaciones .clasificaciones-container .clasificacion-femenina table td .fa-arrow-up {
+  color: green;
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina table th .fa-arrow-down, #clasificaciones .clasificaciones-container .clasificacion-masculina table td .fa-arrow-down, #clasificaciones .clasificaciones-container .clasificacion-femenina table th .fa-arrow-down, #clasificaciones .clasificaciones-container .clasificacion-femenina table td .fa-arrow-down {
+  color: red;
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina table th .fa-circle, #clasificaciones .clasificaciones-container .clasificacion-masculina table td .fa-circle, #clasificaciones .clasificaciones-container .clasificacion-femenina table th .fa-circle, #clasificaciones .clasificaciones-container .clasificacion-femenina table td .fa-circle {
+  color: rgb(194, 193, 193);
+  font-size: 13px;
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina table tbody tr, #clasificaciones .clasificaciones-container .clasificacion-femenina table tbody tr {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina table tbody tr:hover, #clasificaciones .clasificaciones-container .clasificacion-femenina table tbody tr:hover {
+  color: var(--button-primary);
+  border-bottom: 2px solid var(--button-primary);
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina table tbody tr:first-child, #clasificaciones .clasificaciones-container .clasificacion-femenina table tbody tr:first-child {
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina table tr th, #clasificaciones .clasificaciones-container .clasificacion-masculina table tr td, #clasificaciones .clasificaciones-container .clasificacion-femenina table tr th, #clasificaciones .clasificaciones-container .clasificacion-femenina table tr td {
+  border: none;
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina button, #clasificaciones .clasificaciones-container .clasificacion-femenina button {
+  color: var(--button-primary);
+  background: transparent;
+  border: 3px solid var(--button-primary);
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 300px;
+  margin: auto;
+  font-size: 17px;
+  font-weight: bold;
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina button:hover, #clasificaciones .clasificaciones-container .clasificacion-femenina button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+#clasificaciones .clasificaciones-container .clasificacion-masculina button i, #clasificaciones .clasificaciones-container .clasificacion-femenina button i {
+  color: var(--button-primary);
+}
+
+#juegos {
+  overflow-x: auto;
+}
+#juegos table {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#juegos table th {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+}
+#juegos table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+#acerca {
+  margin-bottom: 0px;
+}
+#acerca ul {
+  margin: 40px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+#acerca ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+#acerca ul li figure {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+#acerca ul li figure::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 0;
+}
+#acerca ul li .image-container {
+  width: 270px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+}
+#acerca ul li .image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#acerca ul li .image-container img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+#acerca ul li figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.streaming__sound {
+  background-image: url("/Ejercicio pagina/assets/images/FIFA-Sound_Web-Carousel-Banner_3840x1492_Option-02.webp");
+  margin-bottom: 0px;
+}
+.streaming__sound button {
+  width: 100%;
+  max-width: 400px;
+}
+
+#contacto {
+  background-color: var(--primary);
+  margin: 0 -20px;
+  width: calc(100% + 40px);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#contacto ul {
+  display: flex;
+  gap: 30px;
+}
+#contacto ul li {
+  list-style: none;
+}
+#contacto ul li a {
+  color: white;
+  font-size: 25px;
+}
+#contacto ul li a:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+#contacto p {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+#contacto a {
+  color: white;
+}
+#contacto .tiendas {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#contacto .tiendas img {
+  width: 110px;
+  height: auto;
+}
+
+.marcas {
+  background-color: var(--primary);
+  margin: 1px 0 -20px -20px;
+  width: calc(100% + 40px);
+}
+.marcas h3 {
+  text-align: center;
+  font-size: 20px;
+  color: var(--secondary);
+  font-weight: lighter;
+}
+.marcas ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.marcas ul li {
+  list-style: none;
+  width: 70px;
+}
+.marcas ul li svg {
+  fill: var(--secondary);
+}
+
+footer {
+  background-color: var(--primary);
+  margin-top: 1px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+footer .legal {
+  display: flex;
+  gap: 30px;
+}
+footer p {
+  color: white;
+  font-size: 18px;
+}
+
+.contacto {
+  background: linear-gradient(45deg, var(--tertiary), #375fa5, #0c3780);
+}
+.contacto main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.contacto main h1 {
+  color: white;
+  font-size: 30px;
+}
+.contacto main form {
+  background-color: var(--primary);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.contacto main form:focus-within {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.contacto main form fieldset {
+  padding: 15px;
+  border: none;
+}
+.contacto main form fieldset legend {
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.contacto main form fieldset select {
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  font-size: 16px;
+  width: 100%;
+  background-color: white;
+  transition: border-color 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.contacto main form fieldset select:focus {
+  border-color: var(--button-primary);
+  outline: none;
+}
+.contacto main form fieldset select option {
+  padding: 10px;
+}
+.contacto main form fieldset label {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+.contacto main form fieldset .error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+.contacto main form fieldset input,
+.contacto main form fieldset textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+.contacto main form fieldset input:focus,
+.contacto main form fieldset textarea:focus {
+  border-color: var(--button-primary);
+  outline: none;
+}
+.contacto main form fieldset textarea {
+  resize: none;
+}
+.contacto main form .buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.contacto main form .buttons button {
+  padding: 12px 20px;
+  width: 120px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--button-primary);
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.contacto main form .buttons button:hover {
+  transform: scale(1.05);
+  background-color: var(--button-primary-hover, #0056b3);
+}
+.contacto main form .buttons button:focus {
+  outline: 3px solid var(--button-primary);
+}
+
+@media (max-width: 412px) {
+  p {
+    font-size: 20px;
+  }
+  .myheader {
+    top: 0;
+    position: sticky;
+    z-index: 100;
+  }
+  .myheader label {
+    display: block;
+  }
+  .myheader inputchecked ~ .mymenu {
+    transform: translateX();
+  }
+  .myheader input:checked ~ label .fa-bars {
+    opacity: 0;
+  }
+  .myheader input:checked ~ label .fa-xmark {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+  .myheader .mymenu {
+    z-index: 10;
+    position: fixed;
+    flex-direction: column;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .myheader .mymenu ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .myheader .mymenu ul li {
+    width: 100%;
+    padding: 20px;
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+    cursor: pointer;
+  }
+  .myheader .mymenu ul li:hover {
+    background-color: gray;
+  }
+  .myheader .mymenu ul li a {
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    color: var(--secondary);
+  }
+  .myheader .mymenu .icons-menu {
+    flex-direction: row;
+  }
+  .myheader .icons-menu {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .myheader .icons-menu a i {
+    margin-top: 10px;
+    font-size: 24px;
+  }
+  #inicio .banner-container {
+    flex-wrap: wrap;
+  }
+  #contacto {
+    flex-direction: column;
+    gap: 20px;
+  }
+}/*# sourceMappingURL=styles.css.map */

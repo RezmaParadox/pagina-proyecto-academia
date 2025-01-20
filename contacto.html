@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <link rel="shortcut icon" href="assets/images/F.png" type="image/x-icon" />
+  </head>
+  <body class="contacto">
+    <header class="myheader">
+      <div class="logo">
+        <h1 class="title-logo">FIFA</h1>
+        <div class="balon-animation">
+          <img
+            class="balon"
+            src="https://en.js.cx/clipart/ball.svg"
+            width="40"
+            height="40"
+            id="ball"
+          />
+        </div>
+      </div>
+
+      <input type="checkbox" class="controls" id="menu-btn" />
+      <label for="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+      <nav class="mymenu">
+        <ul class="mymenu-items">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#noticias">Noticias</a></li>
+          <li><a href="index.html#clasificaciones">Clasificaciones</a></li>
+          <li><a href="index.html#juegos">Juegos</a></li>
+          <li><a href="index.html#acerca">Acerca de</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <ul class="icons-menu">
+          <li>
+            <a href="">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-earth-americas"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Formulario de contacto</h1>
+      <form id="formulario">
+        <fieldset>
+          <legend>Datos Generales</legend>
+          <label for="tipo"> Tipo de mensaje</label>
+          <select name="tipo" id="tipo">
+            <option value="consulta">Consulta</option>
+            <option value="sugerencia">Sugerencia</option>
+            <option value="reclamo">Reclamo</option></select
+          ><br /><br />
+          <label for="name">Nombre</label> <br />
+          <br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Ingrese su nombre"
+            maxlength="15"
+            pattern="[a-zA-Z ]+"
+            title="Solo letras y espacios"
+            required
+          />
+          <p  class="error" id="name-error"></p>
+          <br /><br />
+          <label for="email">Email</label> <br />
+          <br />
+          <input
+            list="emails"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Ingrese su email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Formato de email incorrecto"
+            required
+          />
+          <p class="error" id="email-error"></p>
+          <br /><br />
+          <datalist id="emails">
+            <option value="correo1@correo.com"></option>
+            <option value="correo2@correo.com"></option>
+            <option value="correo3@correo.com"></option>
+          </datalist>
+        </fieldset>
+        <fieldset>
+          <legend>Contenido</legend>
+          <label for="message">Mensaje</label> <br />
+          <br />
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Ingrese su mensaje"
+          ></textarea>
+          <p class="error" id="message-error"></p>
+        </fieldset>
+        <br />
+        <div class="buttons">
+          <button type="submit" id="enviar">Enviar</button>
+          <button type="reset">Limpiar</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="legal">
+        <a href="https://www.fifa.com/data-protection-portal/data-protection-policy">POLÍTICA DE PRIVACIDAD</a>
+        <a href="https://www.fifa.com/terms-of-service">TÉRMINOS DE SERVICIO</a>
+      </div>
+      <p>Copyright © 1994 - 2024 FIFA. Todos los derechos reservados.</p>
+    </footer>
+    <script src="assets/scripts/form.js"></script>
+  </body>
+</html>
