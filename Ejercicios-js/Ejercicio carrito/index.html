@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="container-header">
+      <h1>Carrito de compras</h1>
+    </header>
+
+    <div id="datos-producto" class="datos">
+      <ul>
+        <li>
+          <label for="descripcion">Descripción:</label>
+          <input type="text" id="descripcion" />
+        </li>
+        <li>
+          <label for="precio">Precio:</label>
+          <input type="number" id="precio" />
+        </li>
+        <li>
+          <label for="descuento">Descuento:</label>
+          <input type="number" id="descuento" />
+        </li>
+        <li>
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" />
+        </li>
+        <li>
+          <button
+            id="agregar-carrito"
+            class="btn-agregar"
+            onclick="agregarProducto()"
+          >
+            Agregar
+          </button>
+          <button
+            id="guardar-carrito"
+            class="btn-guardar"
+            onclick="editarProducto()"
+          >
+            Guardar
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container-carrito">
+      <table class="carrito-table">
+        <thead>
+          <tr>
+            <th>
+              Producto
+              <div class="ordenar">
+                <button id="btn-asc" onclick="ordenar('asc-num', 'id')">
+                  <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button id="btn-desc" onclick="ordenar('desc-num','id')">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </button>
+              </div>
+            </th>
+            <th>
+              Descripción
+              <div class="ordenar">
+                <button
+                  id="btn-asc-letra"
+                  onclick="ordenar('asc-letras','descripcion')"
+                >
+                  <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button
+                  id="btn-desc-letra"
+                  onclick="ordenar('desc-letras','descripcion')"
+                >
+                  <i class="fa-solid fa-arrow-down"></i>
+                </button>
+              </div>
+            </th>
+            <th>
+              Precio
+              <div class="ordenar">
+                <button id="btn-asc" onclick="ordenar('asc-num','precio')">
+                  <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button id="btn-desc" onclick="ordenar('desc-num','precio')">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </button>
+              </div>
+            </th>
+            <th>
+              Descuento
+              <div class="ordenar">
+                <button id="btn-asc" onclick="ordenar('asc-num','descuento')">
+                  <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button id="btn-desc" onclick="ordenar('desc-num','descuento')">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </button>
+              </div>
+            </th>
+            <th>
+              Cantidad
+              <div class="ordenar">
+                <button id="btn-asc" onclick="ordenar('asc-num','cantidad')">
+                  <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button id="btn-desc" onclick="ordenar('desc-num','cantidad')">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </button>
+              </div>
+            </th>
+            <th>
+              Subtotal
+              <div class="ordenar">
+                <button id="btn-asc" onclick="ordenar('asc-num','subtotal')">
+                  <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button id="btn-desc" onclick="ordenar('desc-num','subtotal')">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </button>
+              </div>
+            </th>
+            <th>
+              Total
+              <div class="ordenar">
+                <button id="btn-asc" onclick="ordenar('asc-num','total')">
+                  <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <button id="btn-desc" onclick="ordenar('desc-num','total')">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </button>
+              </div>
+            </th>
+            <th>
+              Funciones
+              <button class="refrescar" onclick="mostrarCarrito()">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="carrito-body">
+          <!-- Aquí se agregaran los productos al carrito -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="tabla.js"></script>
+  </body>
+</html>

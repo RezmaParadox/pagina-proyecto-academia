@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+}
+
+.container-header{
+    background-color: #1b81c5;
+    margin: -20px -20px 20px -20px;
+    padding: 20px;
+}
+
+h1{
+    color : white;
+}
+
+.datos{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+li{
+    width: 190px;
+    margin-left: 10px;
+}
+
+
+.container-carrito{
+    overflow-x: auto;
+}
+
+
+
+table{
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+}
+td{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.ordenar{
+    display: flex;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn{
+    width: 100%;
+    padding: 10px 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-agregar, .btn-guardar{
+    &:hover{
+        background-color: #3e8e41;
+    }
+}
+
+.refrescar{
+    background-color: gray;
+
+    &:hover{
+        background-color: #585858;
+    }
+
+}
+
+.fa-arrow-up, .fa-arrow-down{
+    color: black;
+    cursor: pointer;
+
+    &:hover{
+        color: blue;
+    }
+}
+
+#btn-asc, #btn-desc, #btn-asc-letra, #btn-desc-letra{
+    background-color: transparent;
+}
+
+.btn-guardar{
+    display: none;
+}
+
+.btn-warning{
+    background-color: #f0ad4e;
+    &:hover{
+        background-color: #ec971f;
+    }
+}
+
+.btn-danger{
+    background-color: #d9534f;
+    &:hover{
+        background-color: #c9302c;
+    }
+}
+
+.btn-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}

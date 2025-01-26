@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio alumnos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tabla de calificaciones</h1>
+
+    <div class="container-input">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre"> <br>
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido"><br>
+
+        <label for="calificacion">Calificación</label>
+        <input type="text" id="calificacion" min="0" max="10"> <br>
+
+        <button id="agregar">Agregar</button>
+    </div><br><br>
+    
+    <table id="tabla-calificaciones" class="myTable">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Calificación</th>
+        </tr>
+        
+        <!-- Aquí se agregarán las filas de la tabla -->
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
