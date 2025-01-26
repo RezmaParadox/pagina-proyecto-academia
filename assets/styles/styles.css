@@ -1,10 +1,11 @@
+@charset "UTF-8";
 :root {
   --primary: #045694;
   --secondary: #f2f2f2;
-  --tertiary: #03122B;
+  --tertiary: #03122b;
   --button-primary: #0a84ff;
   scroll-padding: 100px;
-  --background-color:#eef2fb;
+  --background-color: #eef2fb;
 }
 
 * {
@@ -15,6 +16,10 @@
   font-optical-sizing: auto;
   font-weight: 23px;
   font-style: normal;
+}
+
+body {
+  min-height: 100vh;
 }
 
 img {
@@ -96,10 +101,22 @@ button {
   display: flex;
   align-items: center;
   gap: 40px;
+  overflow-x: auto;
+}
+.myheader .mymenu .mymenu-items {
+  width: 100%;
+  overflow-x: auto; /* Activa el scroll horizontal */
+  max-width: calc(100% - 150px); /* Ajusta al espacio disponible */
+  min-width: 0; /* Permite que el contenido colapse correctamente */
+  scrollbar-width: thin; /* Opcional: scroll delgado en navegadores modernos */
+  -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
+  scrollbar-color: var(--secondary) transparent;
 }
 .myheader .mymenu ul {
   display: flex;
   gap: 20px;
+  min-width: -moz-max-content;
+  min-width: max-content;
 }
 .myheader .mymenu ul li {
   list-style: none;
@@ -158,6 +175,7 @@ main section {
 #inicio .banner-container .promocion {
   position: relative;
   width: 100%;
+  min-width: 340px;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -208,28 +226,33 @@ main section {
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
-#inicio .banner-container .slider-container {
+
+.slider-container {
   position: relative;
   overflow: hidden;
 }
-#inicio .banner-container .slider-container .slider {
+.slider-container .slider {
   display: flex;
   height: 100%;
   transition: transform 0.3s ease-in-out;
 }
-#inicio .banner-container .slider-container .slider .card {
+.slider-container .slider .card {
   min-width: 100%;
+  height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   box-sizing: border-box;
 }
-#inicio .banner-container .slider-container .slider .card img {
+.slider-container .slider .card img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
 }
-#inicio .banner-container .slider-container .slider .card .card-text {
+.slider-container .slider .card .card-text {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -237,14 +260,14 @@ main section {
   padding: 10px;
   background: linear-gradient(to top, rgba(14, 91, 163, 0.8), transparent);
 }
-#inicio .banner-container .slider-container .slider .card .card-text h3,
-#inicio .banner-container .slider-container .slider .card .card-text p {
+.slider-container .slider .card .card-text h3,
+.slider-container .slider .card .card-text p {
   margin: 10px 0;
   font-family: Arial, sans-serif;
   color: var(--secondary);
 }
-#inicio .banner-container .slider-container .prev-btn,
-#inicio .banner-container .slider-container .next-btn {
+.slider-container .prev-btn,
+.slider-container .next-btn {
   position: absolute;
   top: 50%;
   background-color: rgba(10, 132, 255, 0.5960784314);
@@ -257,14 +280,14 @@ main section {
   transform: translateY(-50%);
   z-index: 1;
 }
-#inicio .banner-container .slider-container .prev-btn {
+.slider-container .prev-btn {
   left: 10px;
 }
-#inicio .banner-container .slider-container .next-btn {
+.slider-container .next-btn {
   right: 10px;
 }
-#inicio .banner-container .slider-container .prev-btn:hover,
-#inicio .banner-container .slider-container .next-btn:hover {
+.slider-container .prev-btn:hover,
+.slider-container .next-btn:hover {
   background-color: var(--button-primary);
 }
 
@@ -274,11 +297,12 @@ main section {
 }
 
 #noticias .list-noticias {
+  margin-top: 30px;
   margin-bottom: 50px;
-}
-#noticias ul {
+  width: 100%;
   list-style: none;
   display: flex;
+  justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
 }
@@ -306,20 +330,22 @@ main section {
 }
 #noticias .list-noticias-secundarias {
   width: 100%;
-  max-width: 720px;
-}
-#noticias .list-noticias-secundarias ul {
+  max-width: 640px;
   display: flex;
+  justify-content: space-between;
+  list-style: none;
+  gap: 10px;
   flex-wrap: wrap;
 }
 #noticias .noticia-secundaria {
-  width: 270px;
+  width: 100%;
+  max-width: 270px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 #noticias .noticia-secundaria img {
-  width: 270px;
+  width: 100%;
   height: 170px;
   display: block;
   border-radius: 7px;
@@ -327,7 +353,7 @@ main section {
 
 .streaming {
   margin-top: 100px;
-  background-image: url("/Ejercicio pagina/assets/images/fifaplus_ifa_16x9.jpg");
+  background-image: url("/assets/images/fifaplus_ifa_16x9.jpg");
   background-size: cover;
   width: calc(100% + 40px);
   margin: -20px;
@@ -378,7 +404,7 @@ main section {
   gap: 10px;
 }
 
-#jugadores .slider-container {
+#jugadores .slider-container-jugadores {
   position: relative;
   width: 100%;
   height: 400px;
@@ -386,11 +412,11 @@ main section {
   margin: 40px auto;
   overflow: hidden;
 }
-#jugadores .slider-container .slider {
+#jugadores .slider-container-jugadores .slider {
   display: flex;
   transition: transform 0.3s ease-in-out;
 }
-#jugadores .slider-container .slider .card {
+#jugadores .slider-container-jugadores .slider .card {
   min-width: 300px;
   height: 400px;
   background: linear-gradient(145deg, #ffd700, #f0c420);
@@ -401,7 +427,7 @@ main section {
   -webkit-clip-path: polygon(50% 0%, 80% 10%, 100% 15%, 100% 85%, 85% 90%, 50% 100%, 0% 85%, 0% 75%, 0% 15%, 20% 10%);
           clip-path: polygon(50% 0%, 80% 10%, 100% 15%, 100% 85%, 85% 90%, 50% 100%, 0% 85%, 0% 75%, 0% 15%, 20% 10%);
 }
-#jugadores .slider-container .slider .card img {
+#jugadores .slider-container-jugadores .slider .card img {
   width: 100%;
   max-width: 300px;
   height: 300px;
@@ -409,16 +435,16 @@ main section {
      object-fit: contain;
   border-radius: 10px;
 }
-#jugadores .slider-container .slider .card .card-text {
+#jugadores .slider-container-jugadores .slider .card .card-text {
   background-color: rgba(255, 255, 255, 0.631372549);
 }
-#jugadores .slider-container .slider .card .card-text h3,
-#jugadores .slider-container .slider .card .card-text p {
+#jugadores .slider-container-jugadores .slider .card .card-text h3,
+#jugadores .slider-container-jugadores .slider .card .card-text p {
   margin: 10px 0;
   font-family: Arial, sans-serif;
 }
-#jugadores .slider-container .prev-btn,
-#jugadores .slider-container .next-btn {
+#jugadores .slider-container-jugadores .prev-btn,
+#jugadores .slider-container-jugadores .next-btn {
   position: absolute;
   top: 50%;
   background-color: rgba(10, 132, 255, 0.5960784314);
@@ -431,14 +457,14 @@ main section {
   transform: translateY(-50%);
   z-index: 1;
 }
-#jugadores .slider-container .prev-btn {
+#jugadores .slider-container-jugadores .prev-btn {
   left: 10px;
 }
-#jugadores .slider-container .next-btn {
+#jugadores .slider-container-jugadores .next-btn {
   right: 10px;
 }
-#jugadores .slider-container .prev-btn:hover,
-#jugadores .slider-container .next-btn:hover {
+#jugadores .slider-container-jugadores .prev-btn:hover,
+#jugadores .slider-container-jugadores .next-btn:hover {
   background-color: var(--button-primary);
 }
 #jugadores table {
@@ -467,11 +493,13 @@ main section {
 
 #clasificaciones .clasificaciones-container {
   display: flex;
-  justify-content: space-between;
+  gap: 50px;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina, #clasificaciones .clasificaciones-container .clasificacion-femenina {
+#clasificaciones .clasificaciones-container .clasificacion-masculina,
+#clasificaciones .clasificaciones-container .clasificacion-femenina {
   width: 100%;
   max-width: 600px;
   margin-top: 10px;
@@ -479,7 +507,8 @@ main section {
   flex-direction: column;
   gap: 10px;
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina table, #clasificaciones .clasificaciones-container .clasificacion-femenina table {
+#clasificaciones .clasificaciones-container .clasificacion-masculina table,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table {
   width: 100%;
   border-collapse: collapse;
   border: none;
@@ -487,36 +516,55 @@ main section {
   overflow: hidden;
   border: 2px solid rgba(0, 0, 0, 0.3);
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina table th, #clasificaciones .clasificaciones-container .clasificacion-masculina table td, #clasificaciones .clasificaciones-container .clasificacion-femenina table th, #clasificaciones .clasificaciones-container .clasificacion-femenina table td {
+#clasificaciones .clasificaciones-container .clasificacion-masculina table th,
+#clasificaciones .clasificaciones-container .clasificacion-masculina table td,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table th,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table td {
   padding: 10px;
   text-align: center;
   border: none;
   border-radius: 12px;
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina table th .fa-arrow-up, #clasificaciones .clasificaciones-container .clasificacion-masculina table td .fa-arrow-up, #clasificaciones .clasificaciones-container .clasificacion-femenina table th .fa-arrow-up, #clasificaciones .clasificaciones-container .clasificacion-femenina table td .fa-arrow-up {
+#clasificaciones .clasificaciones-container .clasificacion-masculina table th .fa-arrow-up,
+#clasificaciones .clasificaciones-container .clasificacion-masculina table td .fa-arrow-up,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table th .fa-arrow-up,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table td .fa-arrow-up {
   color: green;
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina table th .fa-arrow-down, #clasificaciones .clasificaciones-container .clasificacion-masculina table td .fa-arrow-down, #clasificaciones .clasificaciones-container .clasificacion-femenina table th .fa-arrow-down, #clasificaciones .clasificaciones-container .clasificacion-femenina table td .fa-arrow-down {
+#clasificaciones .clasificaciones-container .clasificacion-masculina table th .fa-arrow-down,
+#clasificaciones .clasificaciones-container .clasificacion-masculina table td .fa-arrow-down,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table th .fa-arrow-down,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table td .fa-arrow-down {
   color: red;
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina table th .fa-circle, #clasificaciones .clasificaciones-container .clasificacion-masculina table td .fa-circle, #clasificaciones .clasificaciones-container .clasificacion-femenina table th .fa-circle, #clasificaciones .clasificaciones-container .clasificacion-femenina table td .fa-circle {
+#clasificaciones .clasificaciones-container .clasificacion-masculina table th .fa-circle,
+#clasificaciones .clasificaciones-container .clasificacion-masculina table td .fa-circle,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table th .fa-circle,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table td .fa-circle {
   color: rgb(194, 193, 193);
   font-size: 13px;
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina table tbody tr, #clasificaciones .clasificaciones-container .clasificacion-femenina table tbody tr {
+#clasificaciones .clasificaciones-container .clasificacion-masculina table tbody tr,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table tbody tr {
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina table tbody tr:hover, #clasificaciones .clasificaciones-container .clasificacion-femenina table tbody tr:hover {
+#clasificaciones .clasificaciones-container .clasificacion-masculina table tbody tr:hover,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table tbody tr:hover {
   color: var(--button-primary);
   border-bottom: 2px solid var(--button-primary);
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina table tbody tr:first-child, #clasificaciones .clasificaciones-container .clasificacion-femenina table tbody tr:first-child {
+#clasificaciones .clasificaciones-container .clasificacion-masculina table tbody tr:first-child,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table tbody tr:first-child {
   border-top: 2px solid rgba(0, 0, 0, 0.2);
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina table tr th, #clasificaciones .clasificaciones-container .clasificacion-masculina table tr td, #clasificaciones .clasificaciones-container .clasificacion-femenina table tr th, #clasificaciones .clasificaciones-container .clasificacion-femenina table tr td {
+#clasificaciones .clasificaciones-container .clasificacion-masculina table tr th,
+#clasificaciones .clasificaciones-container .clasificacion-masculina table tr td,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table tr th,
+#clasificaciones .clasificaciones-container .clasificacion-femenina table tr td {
   border: none;
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina button, #clasificaciones .clasificaciones-container .clasificacion-femenina button {
+#clasificaciones .clasificaciones-container .clasificacion-masculina button,
+#clasificaciones .clasificaciones-container .clasificacion-femenina button {
   color: var(--button-primary);
   background: transparent;
   border: 3px solid var(--button-primary);
@@ -527,20 +575,21 @@ main section {
   font-size: 17px;
   font-weight: bold;
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina button:hover, #clasificaciones .clasificaciones-container .clasificacion-femenina button:hover {
+#clasificaciones .clasificaciones-container .clasificacion-masculina button:hover,
+#clasificaciones .clasificaciones-container .clasificacion-femenina button:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
-#clasificaciones .clasificaciones-container .clasificacion-masculina button i, #clasificaciones .clasificaciones-container .clasificacion-femenina button i {
+#clasificaciones .clasificaciones-container .clasificacion-masculina button i,
+#clasificaciones .clasificaciones-container .clasificacion-femenina button i {
   color: var(--button-primary);
 }
 
-#juegos {
+#juegos .juegos-container {
   overflow-x: auto;
 }
 #juegos table {
   width: 100%;
-  max-width: 850px;
   margin: 0 auto;
   border-collapse: collapse;
   margin-top: 20px;
@@ -560,6 +609,16 @@ main section {
   text-align: center;
   border: 1px solid #ccc;
 }
+#juegos table .team-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+#juegos table .team-info img {
+  max-width: 50px;
+}
 
 #acerca {
   margin-bottom: 0px;
@@ -567,6 +626,7 @@ main section {
 #acerca ul {
   margin: 40px;
   display: flex;
+  justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
 }
@@ -601,10 +661,6 @@ main section {
   height: auto;
   display: block;
 }
-#acerca ul li .image-container img:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
 #acerca ul li figcaption {
   position: absolute;
   bottom: 0;
@@ -616,12 +672,38 @@ main section {
   text-align: center;
   padding: 10px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
-  z-index: 1;
+  z-index: 10;
   box-sizing: border-box;
+}
+#acerca ul li .description {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  transition: top 0.3s ease;
+  box-sizing: border-box;
+}
+#acerca ul li .description p {
+  text-align: justify;
+  font-size: 16px;
+}
+#acerca ul li:hover .description {
+  top: 0;
+}
+#acerca ul li:hover .image-container {
+  transform: scale(1.1);
+  filter: blur(3px);
+  transition: transform 0.3s ease;
 }
 
 .streaming__sound {
-  background-image: url("/Ejercicio pagina/assets/images/FIFA-Sound_Web-Carousel-Banner_3840x1492_Option-02.webp");
+  background-image: url("/assets/images/FIFA-Sound_Web-Carousel-Banner_3840x1492_Option-02.webp");
+  background-position: right;
+  background-size: cover;
   margin-bottom: 0px;
 }
 .streaming__sound button {
@@ -826,7 +908,82 @@ footer p {
   outline: 3px solid var(--button-primary);
 }
 
-@media (max-width: 412px) {
+@media (max-width: 480px) {
+  p {
+    font-size: 20px;
+  }
+  .myheader {
+    top: 0;
+    position: sticky;
+    z-index: 100;
+  }
+  .myheader label {
+    display: block;
+  }
+  .myheader inputchecked ~ .mymenu {
+    transform: translateX();
+  }
+  .myheader input:checked ~ label .fa-bars {
+    opacity: 0;
+  }
+  .myheader input:checked ~ label .fa-xmark {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+  .myheader .mymenu {
+    z-index: 10;
+    position: fixed;
+    flex-direction: column;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .myheader .mymenu ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .myheader .mymenu ul li {
+    width: 100%;
+    padding: 20px;
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+    cursor: pointer;
+  }
+  .myheader .mymenu ul li:hover {
+    background-color: gray;
+  }
+  .myheader .mymenu ul li a {
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    color: var(--secondary);
+  }
+  .myheader .mymenu .icons-menu {
+    flex-direction: row;
+  }
+  .myheader .icons-menu {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .myheader .icons-menu a i {
+    margin-top: 10px;
+    font-size: 24px;
+  }
+  #inicio .banner-container {
+    flex-wrap: wrap;
+  }
+  #contacto {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
   p {
     font-size: 20px;
   }

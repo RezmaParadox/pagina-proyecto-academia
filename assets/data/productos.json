@@ -1,0 +1,171 @@
+[
+  {
+    "id": 1,
+    "nombre": "Adidas Camiseta Selección Argentina 2024 - Hombre",
+    "descripcion": "Lleva el emblema del Sol de Mayo debajo de la parte posterior del cuello. Un diseño clásico para los campeones de la Copa Mundial de la FIFA™. Desde las famosas rayas hasta el emblema del Sol de Mayo, esta camiseta adidas ofrece a los aficionados todos los elementos tradicionales que no deben faltar en una Camiseta Selección Argentina 2024. Los detalles dorados y las tres estrellas son un homenaje al triunfo en Catar. Luce con orgullo tu pasión por el fútbol con el escudo bordado sin renunciar a la comodidad que brinda el sistema de control de la humedad AEROREADY.",
+    "precio": 90.0,
+    "color": "blue",
+    "talla": "S, M, L, XL",
+    "existeciasTalla":{
+      "S": 10,
+      "M": 5,
+      "L": 3,
+      "XL": 2
+    },
+    "imagen": "../assets/images/camiseta-argentina.webp"
+  },
+  {
+    "id": 2,
+    "nombre": "Camiseta primera de México 2024 adidas, hombre",
+    "descripcion": "Camiseta oficial de la selección de fútbol de México, diseñada para brindar comodidad y rendimiento. Ideal para los seguidores de la selección mexicana, con detalles tradicionales que celebran la cultura y la historia de México en el deporte.",
+    "precio": 90.0,
+    "color": "black",
+    "talla": "S, M, L, XL",
+    "existeciasTalla":{
+      "S": 10,
+      "M": 5,
+      "L": 3,
+      "XL": 2
+    },
+    "imagen": "../assets/images/camiseta-mexico.webp"
+  },
+  {
+    "id": 3,
+    "nombre": "Camiseta de local de Brasil 2023, hombre",
+    "descripcion": "Camiseta oficial de la selección de fútbol de Brasil, con un diseño que resalta los colores y la identidad de la nación. Esta camiseta es perfecta para los fanáticos de la Canarinha que quieren mostrar su apoyo durante los partidos.",
+    "precio": 62.0,
+    "color": "yellow",
+    "talla": "S, M, L, XL",
+    "existeciasTalla":{
+      "S": 10,
+      "M": 5,
+      "L": 3,
+      "XL": 2
+    },
+    "imagen": "../assets/images/camiseta-brasil.webp"
+  },
+  {
+    "id": 4,
+    "nombre": "Camiseta primera de Chile 2024 adidas, hombre",
+    "descripcion": "La camiseta oficial de la selección de fútbol de Chile para la temporada 2024, con un diseño que refleja la pasión y el orgullo de los chilenos por su selección. Hecha para brindar comodidad y estilo durante todo el partido.",
+    "precio": 62.0,
+    "color": "red",
+    "talla": "S, M, L, XL",
+    "existeciasTalla":{
+      "S": 10,
+      "M": 5,
+      "L": 3,
+      "XL": 2
+    },
+    "imagen": "../assets/images/camiseta-chile.webp"
+  },
+  {
+    "id": 5,
+    "nombre": "Camiseta con mascotas FIFA Classics, mujer",
+    "descripcion": "Conmemora la arraigada tradición del fútbol femenino con nuestra exclusiva camiseta FIFA Classics de las mascotas de la Copa Mundial Femenina. Esta camiseta única rinde homenaje a las inolvidables mascotas que insuflaron vitalidad y energía a las anteriores ediciones de la Copa Mundial Femenina, reuniendo a distintas generaciones de aficionados al fútbol con un diseño colorido y nostálgico.",
+    "precio": 50.0,
+    "color": "gray",
+    "talla": "S, M, L, XL",
+    "existeciasTalla":{
+      "S": 10,
+      "M": 5,
+      "L": 3,
+      "XL": 2
+    },
+    "imagen": "../assets/images/camiseta-mascotas.webp"
+  },
+  {
+    "id": 6,
+    "nombre": "Sudadera con emblema de la Copa Mundial femenina Suecia 95 FIFA Classics, mujer",
+    "descripcion":"Realza tu estilo con esta cómoda sudadera con el logotipo oficial de la Copa Mundial Femenina de la FIFA™ de 1995, celebrada en Suecia. Demuestra tu admiración por el fútbol femenino y rememora los mejores momentos del Mundial de 1995 con esta simbólica sudadera.",
+    "precio": 80.0,
+    "color": "blue",
+    "talla": "S, M, L, XL",
+    "existeciasTalla":{
+      "S": 10,
+      "M": 5,
+      "L": 3,
+      "XL": 2
+    },
+    "imagen": "../assets/images/sudadera-emblema.webp"
+  },
+  {
+    "id": 7,
+    "nombre": "Camiseta de local de México 2022, mujer",
+    "descripcion":"Un poder divino. Esta camiseta de local adidas de la selección mexicana exhibe las plumas que adornan la cabeza de la deidad azteca Quetzalcóatl para aportar fortaleza mental en las citas futbolísticas más exigentes. Está hecha pensando en la comodidad de las hinchas, con un tejido suave y el sistema AEROREADY que absorbe la humedad. En la parte posterior, una representación de la cabeza de Quetzalcóatl pretende invocar fuerza espiritual para quien la lleve. El nuevo escudo de la selección y el logotipo de las tres barras en la pechera ponen el broche a una renovada imagen.",
+    "precio": 63.35,
+    "color": "green",
+    "talla": "S, M, L, XL",
+    "existeciasTalla":{
+      "S": 10,
+      "M": 5,
+      "L": 3,
+      "XL": 2
+    },
+    "imagen": "../assets/images/camiseta-mexico-mujer.webp"
+  },
+  {
+    "id": 8,
+    "nombre": "Camiseta con emblema de la Copa Mundial femenina Estados Unidos 99 FIFA Classics, mujer",
+    "descripcion": "Rememora la legendaria Copa Mundial Femenina de la FIFA™ celebrada en Estados Unidos en 1999 con esta elegante camiseta con el logotipo oficial del certamen. Disfruta de la emoción del torneo y muestra tu apoyo al fútbol femenino con esta emblemática camiseta.",
+    "precio": 50.00,
+    "color": "blue",
+    "talla": "S, M, L, XL",
+    "existeciasTalla":{
+      "S": 10,
+      "M": 5,
+      "L": 3,
+      "XL": 2
+    },
+    "imagen": "../assets/images/camiseta-mujer-eu99.webp"
+  },
+  {
+    "id": 9,
+    "nombre": "Camiseta oficial de Argentina enmarcada y firmada por Lionel Messi - Mundial de 2022",
+    "descripcion":"Lionel Messi firmó de su puño y letra esta camiseta de la selección argentina durante una sesión privada de autógrafos celebrada en Miami el 29 de septiembre de 2023. Acompaña a la camiseta un certificado de autenticidad oficial de la Copa Mundial de la FIFA™ que atestigua que la firma es 100 % original. Adquiere una pieza única y auténtica de la historia del deporte. Vuelve a vivir la emoción de la Copa Mundial de la FIFA™ con este producto con licencia oficial.",
+    "precio": 3590.00,
+    "color": "blue",
+    "talla": "M",
+    "existeciasTalla":{
+      "M": 1
+    },
+    "imagen": "../assets/images/camiseta-messi.webp"
+  },
+  {
+    "id": 10,
+    "nombre": "Camiseta oficial de España enmarcada y firmada por Xabi Alonso - Mundial de 2010",
+    "descripcion":"Xabi Alonso firmó de su puño y letra esta camiseta de la selección española durante una sesión privada de autógrafos celebrada en Colonia el 14 de agosto de 2024. Acompaña a la camiseta un certificado de autenticidad oficial de la Copa Mundial de la FIFA™ que atestigua que la firma es 100 % original. Adquiere una pieza única y auténtica de la historia del deporte. Vuelve a vivir la emoción de la Copa Mundial de la FIFA™ con este producto con licencia oficial.",
+    "precio": 710.00 ,
+    "color": "red",
+    "talla": "L",
+    "existeciasTalla":{
+      "L": 1
+    },
+    "imagen": "../assets/images/camiseta-alonso.webp"
+  },
+  {
+    "id": 11,
+    "nombre": "Camisetas Firmadas Andrés Iniesta Y Xavi Oficiales De Casa",
+    "descripcion":"Este impresionante marco doble oficial de la Copa Mundial de la FIFA muestra dos camisetas firmadas de España una al lado de la otra: una firmada por Andrés Iniesta y la otra por Xavi. Cada marco viene con un Certificado de Autenticidad de la Copa Mundial de la FIFA oficial para cada camiseta, que sirve como prueba de que estos dos artículos firmados son 100% genuinos. Un homenaje espectacular a dos grandes íconos, ¡este Marco Doble Oficial de la Copa Mundial de la FIFA es imperdible!",
+    "precio":3660.00,
+    "color": "red",
+    "talla": "L",
+    "existeciasTalla":{
+      "L": 1
+    },
+    "imagen": "../assets/images/camiseta-doble.webp"
+  },
+  {
+    "id": 12,
+    "nombre": "Camiseta oficial de Inglaterra enmarcada y firmada por Sir Geoff Hurst - Mundial de 1966",
+    "descripcion":"Sir Geoff Hurst firmó de su puño y letra esta camiseta durante una sesión privada de autógrafos. Acompaña a la camiseta un certificado de autenticidad oficial de la Copa Mundial de la FIFA™ que atestigua que la firma es 100 % original. Adquiere una pieza única y auténtica de la historia del deporte. Vuelve a vivir la emoción de la Copa Mundial de la FIFA™ con este producto con licencia oficial.",
+    "precio": 710.00,
+    "color": "red",
+    "talla": "L",
+    "existeciasTalla":{
+      "L": 1
+    },
+    "imagen": "../assets/images/camiseta-hurts.webp"
+  }
+
+]

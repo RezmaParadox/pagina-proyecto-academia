@@ -1,3 +1,5 @@
+import { conection } from "../api/conection.js";
+
 /*Variables para animacion del baloon*/
 const containerBalon = document.getElementsByClassName("balon-animation")[0];
 const ball = document.getElementsByClassName("balon")[0];
@@ -115,47 +117,89 @@ if (containerBalon && ball) {
   console.error("No se encontró el contenedor o el balón.");
 }
 
-document.getElementById("formulario").addEventListener("submit",function (event) {
-  event.preventDefault();
+async function mostrarPartidos( dataPartidos ) {
+  const partidos = document.getElementById("juegos-table");
+  const partidosLimitados = Object.values(dataPartidos).slice(0, 5);
+  partidos.innerHTML = `
+    <thead>
+      <th>Fecha</th>
+      <th>Liga</th>
+      <th>País</th>
+      <th>Equipo Local</th>
+      <th>Goles</th>
+      <th>Equipo Visitante</th>
+      <th>Goles</th>
+    </thead>
+    <tbody>
+    ${partidosLimitados.map((partido) => {
+      let date = new Date(partido.fixture.date).toLocaleDateString('es-ES');
+      return `
+        <tr>
+          <td>${date}</td>
+          <td>${partido.league.name}</td>
+          <td>${partido.league.country}</td>
+          <td>
+            <div class="team-info">
+              <img src="${partido.teams.home.logo}" alt="${partido.teams.home.name}">  
+              ${partido.teams.home.name}
+            </div>
+          </td>
+          <td>${partido.goals.home}</td>
+          <td>
+            <div class="team-info">
+              <img src="${partido.teams.away.logo}" alt="${partido.teams.away.name}">
+              ${partido.teams.away.name} 
+            </div>
 
-  if(validateForm(this)) {
-    alert("Formulario enviado correctamente");
-    this.submit();
+          </td>
+          <td>${partido.goals.away}</td>
+        </tr>
+      `;
+    }).join('')}
+    </tbody>
+  `;
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    // Verificar si los datos ya están en sesionStorage
+    let dataPartidos;
+
+    if (sessionStorage.getItem("partidos")) {
+      dataPartidos = JSON.parse(sessionStorage.getItem("partidos"));
+    }else{
+      dataPartidos = await conection(); // Esperar a que la promesa se resuelva
+      // Guardar los resultados en sesionStorage
+      sessionStorage.setItem("partidos", JSON.stringify(dataPartidos.response));
+    }
+    mostrarPartidos(dataPartidos.response);  // Usar el array de resultados
+    console.log(dataPartidos);
+  } catch (error) {
+    console.error('Error al obtener los datos:', error);
+  }
+  // Obtener los botones por ID
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+  const prevBtnJugadores = document.getElementById("prev-btn-jugadores");
+  const nextBtnJugadores = document.getElementById("next-btn-jugadores");
+
+  // Asignar los manejadores de clic
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", function() {
+      moveSlider(-1); // Mover el slider hacia atrás
+    });
+    nextBtn.addEventListener("click", function() {
+      moveSlider(1); // Mover el slider hacia adelante
+    });
+  }
+
+  if (prevBtnJugadores && nextBtnJugadores) {
+    prevBtnJugadores.addEventListener("click", function() {
+      moveSliderJugadores(-1); // Mover el slider de jugadores hacia atrás
+    });
+    nextBtnJugadores.addEventListener("click", function() {
+      moveSliderJugadores(1); // Mover el slider de jugadores hacia adelante
+    });
   }
 });
-
-//Función para validar el formulario
-function validateForm(form) {
-  let isValid = true;
-
-  const name = form.querySelector("#name").value.trim();
-  const email = form.querySelector("#email").value.trim();
-  const message = form.querySelector("#message").value.trim();
-
-  const labeLError = form.querySelector("#name-error");
-  const labelEmailError = form.querySelector("#email-error");
-  const labelMessageError = form.querySelector("#message-error");
-
-  labeLError.textContent = "";
-  labelEmailError.textContent = "";
-  labelMessageError.textContent = "";
-
-  if(name === "") {
-    isValid = false;
-    labeLError.textContent = "El nombre es requerido";
-  }
-  
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    isValid = false;
-    labelEmailError.textContent = "El email no es valido";
-  }
-
-  if (message === "") {
-    isValid = false;
-    labelMessageError.textContent = "El mensaje es requerido";
-  }
-
-  return isValid;
-}
 
