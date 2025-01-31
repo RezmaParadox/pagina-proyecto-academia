@@ -3,91 +3,91 @@ const listaCompra = JSON.parse(sessionStorage.getItem("compra"));
 console.log(listaCompra);
 let copiaLista = [...listaCompra];
 
-function agregarProducto() {
-  let campos = llamarCampos();
+// function agregarProducto() {
+//   let campos = llamarCampos();
 
-  let descripcion = campos.descripcion;
-  let precio = campos.precio;
-  let descuento = campos.descuento;
-  let cantidad = campos.cantidad;
+//   let descripcion = campos.descripcion;
+//   let precio = campos.precio;
+//   let descuento = campos.descuento;
+//   let cantidad = campos.cantidad;
 
-  if (!validacionCampos()) {
-    alert("Todos los campos son obligatorios y deben ser validos");
-    return;
-  }
+//   if (!validacionCampos()) {
+//     alert("Todos los campos son obligatorios y deben ser validos");
+//     return;
+//   }
 
-  let producto = {
-    id: carrito.length + 1,
-    descripcion: descripcion,
-    precio: precio,
-    descuento: descuento,
-    cantidad: cantidad,
-  };
+//   let producto = {
+//     id: carrito.length + 1,
+//     descripcion: descripcion,
+//     precio: precio,
+//     descuento: descuento,
+//     cantidad: cantidad,
+//   };
 
-  carrito.push(producto);
+//   carrito.push(producto);
 
-  limpiar();
-  mostrarCarrito();
-}
+//   limpiar();
+//   mostrarCarrito();
+// }
 
-function llamarCampos() {
-  let descripcion = document.getElementById("descripcion").value;
-  let precio = parseInt(document.getElementById("precio").value);
-  let descuento = parseInt(document.getElementById("descuento").value);
-  let cantidad = parseInt(document.getElementById("cantidad").value);
+// function llamarCampos() {
+//   let descripcion = document.getElementById("descripcion").value;
+//   let precio = parseInt(document.getElementById("precio").value);
+//   let descuento = parseInt(document.getElementById("descuento").value);
+//   let cantidad = parseInt(document.getElementById("cantidad").value);
 
-  return { descripcion, precio, descuento, cantidad };
-}
+//   return { descripcion, precio, descuento, cantidad };
+// }
 
-function validacionCampos() {
-  let campos = llamarCampos();
+// function validacionCampos() {
+//   let campos = llamarCampos();
 
-  let descripcion = campos.descripcion;
-  let precio = campos.precio;
-  let descuento = campos.descuento;
-  let cantidad = campos.cantidad;
+//   let descripcion = campos.descripcion;
+//   let precio = campos.precio;
+//   let descuento = campos.descuento;
+//   let cantidad = campos.cantidad;
 
-  if (descripcion.length > 0 && precio > 0 && descuento >= 0 && cantidad > 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
+//   if (descripcion.length > 0 && precio > 0 && descuento >= 0 && cantidad > 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-editarProducto = (id) => {
-  let producto = carrito.find((producto) => producto.id === id);
-  let index = carrito.findIndex((producto) => producto.id === id);
-  console.log(producto);
-  let descripcion = document.getElementById("descripcion");
-  let precio = document.getElementById("precio");
-  let descuento = document.getElementById("descuento");
-  let cantidad = document.getElementById("cantidad");
+// editarProducto = (id) => {
+//   let producto = carrito.find((producto) => producto.id === id);
+//   let index = carrito.findIndex((producto) => producto.id === id);
+//   console.log(producto);
+//   let descripcion = document.getElementById("descripcion");
+//   let precio = document.getElementById("precio");
+//   let descuento = document.getElementById("descuento");
+//   let cantidad = document.getElementById("cantidad");
 
-  descripcion.value = producto.descripcion;
-  precio.value = producto.precio;
-  descuento.value = producto.descuento;
-  cantidad.value = producto.cantidad;
+//   descripcion.value = producto.descripcion;
+//   precio.value = producto.precio;
+//   descuento.value = producto.descuento;
+//   cantidad.value = producto.cantidad;
 
-  let buttonGuardar = document.getElementById("guardar-carrito");
-  buttonGuardar.style.display = "inline-block";
+//   let buttonGuardar = document.getElementById("guardar-carrito");
+//   buttonGuardar.style.display = "inline-block";
 
-  buttonGuardar.onclick = () => {
-    let productoActualizado = {
-      id: producto.id,
-      descripcion: document.getElementById("descripcion").value,
-      precio: parseInt(document.getElementById("precio").value),
-      descuento: parseInt(document.getElementById("descuento").value),
-      cantidad: parseInt(document.getElementById("cantidad").value),
-    };
+//   buttonGuardar.onclick = () => {
+//     let productoActualizado = {
+//       id: producto.id,
+//       descripcion: document.getElementById("descripcion").value,
+//       precio: parseInt(document.getElementById("precio").value),
+//       descuento: parseInt(document.getElementById("descuento").value),
+//       cantidad: parseInt(document.getElementById("cantidad").value),
+//     };
 
-    carrito[index] = productoActualizado;
-    limpiar();
-    buttonGuardar.style.display = "none";
-    mostrarCarrito();
-  };
+//     carrito[index] = productoActualizado;
+//     limpiar();
+//     buttonGuardar.style.display = "none";
+//     mostrarCarrito();
+//   };
 
-  document.getElementById("datos-producto").appendChild(buttonGuardar);
-};
+//   document.getElementById("datos-producto").appendChild(buttonGuardar);
+// };
 
 eliminarProducto = (index) => {
   listaCompra.splice(index, 1);
@@ -155,12 +155,23 @@ function mostrarCarrito(copia) {
           <td><strong>Subtotal General:</strong><br>$${subtotalGeneral.toFixed(
             2
           )}</td>
-          ${!isNaN(totalGeneral) ? `<td><strong>Total General:</strong><br>$${totalGeneral.toFixed(
+          ${!isNaN(totalGeneral) ? `<td colspan="4"><strong>Total General:</strong><br>$${totalGeneral.toFixed(
             2
           )}</td>` :  `<td colspan="4"><strong>Total General:</strong><br>$${subtotalGeneral.toFixed(2)}</td>`}
       `;
 
   carritoBody.appendChild(totalfila);
+}
+
+function aplicarCupon(){
+  let cupon = document.getElementById("cupon").value;
+  if(cupon === "OFERTAS10"){
+    let descuento = 10;
+    listaCompra.forEach(producto =>{
+      producto.descuento = descuento;
+      mostrarCarrito();
+    })
+  }
 }
 
 function ordenar(tipo, campo) {

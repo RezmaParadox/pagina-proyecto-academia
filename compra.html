@@ -29,7 +29,7 @@
   <body>
     <header class="myheader">
       <div class="logo">
-        <h1 class="title-logo">FIFA</h1>
+        <a href="index.html"><h1 class="title-logo">FIFA</h1></a>
         <div class="balon-animation">
           <img
             class="balon"
@@ -48,32 +48,25 @@
       </label>
       <nav class="mymenu">
         <ul class="mymenu-items">
-            <ul class="mymenu-items">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#noticias">Noticias</a></li>
-                <li><a href="index.html#clasificaciones">Clasificaciones</a></li>
-                <li><a href="index.html#juegos">Juegos</a></li>
-                <li><a href="tienda.html">Tienda</a></li>
-                <li><a href="index.html#acerca">Acerca de</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-              </ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#noticias">Noticias</a></li>
+          <li><a href="index.html#clasificaciones">Clasificaciones</a></li>
+          <li><a href="index.html#juegos">Partidos</a></li>
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="index.html#acerca">Acerca de</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
         <ul class="icons-menu">
           <li>
-            <a id="cart-btn">
-              <i class="fa-solid fa-cart-shopping"></i>
+            <a href="">
+              <i class="fa-solid fa-magnifying-glass"></i>
             </a>
           </li>
-          <!-- <li>
-              <a href="">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </a>
-            </li> -->
-            <li>
-              <a href="">
-                <i class="fa-solid fa-earth-americas"></i>
-              </a>
-            </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-earth-americas"></i>
+            </a>
+          </li>
           <li>
             <a href="">
               <i class="fa-solid fa-user"></i>
@@ -85,6 +78,12 @@
     <main>
         <h1>Descripción de compra</h1>
         <section id="info-compra">
+            <div class="container-descuento">
+              <label for="cupon" > Ingrese cupon:</label>
+              <input type="text" id="cupon" placeholder="Cupon" value="OFERTAS10">
+              <button id="btn-aplicar" onclick="aplicarCupon()">Aplicar</button>
+            </div>
+
             <div class="container-carrito">
                 <table class="carrito-table">
                   <thead>

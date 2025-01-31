@@ -163,16 +163,14 @@ async function mostrarPartidos( dataPartidos ) {
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     // Verificar si los datos ya están en sesionStorage
-    let dataPartidos;
+    let dataPartidos = JSON.parse(sessionStorage.getItem("partidos")) || {};
 
-    if (sessionStorage.getItem("partidos")) {
-      dataPartidos = JSON.parse(sessionStorage.getItem("partidos"));
-    }else{
-      dataPartidos = await conection(); // Esperar a que la promesa se resuelva
-      // Guardar los resultados en sesionStorage
-      sessionStorage.setItem("partidos", JSON.stringify(dataPartidos.response));
+    if(Object.keys(dataPartidos).length === 0){
+      dataPartidos = await conection();
+      sessionStorage.setItem("partidos",JSON.stringify(dataPartidos.response));
     }
-    mostrarPartidos(dataPartidos.response);  // Usar el array de resultados
+
+    mostrarPartidos(dataPartidos);  // Usar el array de resultados
     console.log(dataPartidos);
   } catch (error) {
     console.error('Error al obtener los datos:', error);

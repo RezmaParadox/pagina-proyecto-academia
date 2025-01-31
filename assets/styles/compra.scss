@@ -1,9 +1,43 @@
 #info-compra{
     min-height: 38vh;
+    .container-descuento{
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap:  10px;
+
+        label{
+            font-size: 18px;
+        }
+
+        input{
+            font-size: 18px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        button{
+            padding: 7px;
+            border: none;
+            background-color: green;
+            color: var(--secondary);
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: darkgreen;
+            }
+        }
+    }
+
 }
 
 .container-carrito{
     overflow-x: scroll;
+
+
 }
 .carrito-table{
     width: 100%;

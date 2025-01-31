@@ -860,12 +860,6 @@ footer p {
   font-size: 18px;
   font-weight: 500;
 }
-.contacto main form fieldset .error {
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
-  display: block;
-}
 .contacto main form fieldset input,
 .contacto main form fieldset textarea {
   padding: 12px;
@@ -882,6 +876,17 @@ footer p {
 }
 .contacto main form fieldset textarea {
   resize: none;
+}
+.contacto main form fieldset .error {
+  color: red;
+  font-size: 15px;
+  margin-top: 5px;
+}
+.contacto main form fieldset .border-error {
+  border: 2px solid red;
+}
+.contacto main form fieldset .border-accept {
+  border: 2px solid green;
 }
 .contacto main form .buttons {
   display: flex;
@@ -908,81 +913,6 @@ footer p {
   outline: 3px solid var(--button-primary);
 }
 
-@media (max-width: 480px) {
-  p {
-    font-size: 20px;
-  }
-  .myheader {
-    top: 0;
-    position: sticky;
-    z-index: 100;
-  }
-  .myheader label {
-    display: block;
-  }
-  .myheader inputchecked ~ .mymenu {
-    transform: translateX();
-  }
-  .myheader input:checked ~ label .fa-bars {
-    opacity: 0;
-  }
-  .myheader input:checked ~ label .fa-xmark {
-    opacity: 1;
-    transform: rotate(360deg);
-  }
-  .myheader .mymenu {
-    z-index: 10;
-    position: fixed;
-    flex-direction: column;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--primary);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-  }
-  .myheader .mymenu ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-  }
-  .myheader .mymenu ul li {
-    width: 100%;
-    padding: 20px;
-    display: block;
-    margin: 20px 0;
-    text-align: center;
-    cursor: pointer;
-  }
-  .myheader .mymenu ul li:hover {
-    background-color: gray;
-  }
-  .myheader .mymenu ul li a {
-    width: 100%;
-    height: 100%;
-    font-size: 22px;
-    color: var(--secondary);
-  }
-  .myheader .mymenu .icons-menu {
-    flex-direction: row;
-  }
-  .myheader .icons-menu {
-    width: 100%;
-    justify-content: space-between;
-  }
-  .myheader .icons-menu a i {
-    margin-top: 10px;
-    font-size: 24px;
-  }
-  #inicio .banner-container {
-    flex-wrap: wrap;
-  }
-  #contacto {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
 @media (max-width: 768px) {
   p {
     font-size: 20px;
@@ -1012,7 +942,7 @@ footer p {
     top: 60px;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 95vh;
     background-color: var(--primary);
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;

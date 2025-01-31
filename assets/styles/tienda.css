@@ -88,17 +88,23 @@
 }
 .cards-container .cards-filters select {
   background-color: var(--primary);
-  font-size: 20px;
+  font-size: 18px;
   color: var(--secondary);
   border: none;
   padding: 10px;
   border-radius: 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.cards-container .cards-filters select:focus {
+  outline: none;
 }
 .cards-container .cards-filters select option {
   font-size: 18px;
-}
-.cards-container .cards-filters select option:hover {
-  background-color: var(--secondary);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .cards-container .cards {
   display: flex;
@@ -209,18 +215,14 @@
 }
 .modal-container .modal-content .modal-body .modal-talla-container .selected {
   background-color: rgba(0, 0, 0, 0.164);
-  color: var(--primary);
 }
 .modal-container .modal-content .modal-body .modal-color-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.modal-container .modal-content .modal-body .modal-color-container button {
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
+.modal-container .modal-content .modal-body .modal-color-container .selected {
+  border: 2px solid black;
 }
 .modal-container .modal-content .modal-body .add-to-cart {
   background-color: var(--primary);
@@ -242,6 +244,14 @@
 .modal-container .modal-content .close-modal i {
   font-size: 34px;
   color: black;
+}
+
+.modal-color {
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 2px;
 }
 
 .modal-container-carrito {
@@ -301,6 +311,16 @@
 .modal-container-carrito .modal-content .modal-body ul li img {
   width: 100px;
   height: 100px;
+}
+.modal-container-carrito .modal-content .modal-body ul li .product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-container-carrito .modal-content .modal-body .product-color {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .modal-container-carrito .modal-content .modal-body .product-quantity {
   display: flex;

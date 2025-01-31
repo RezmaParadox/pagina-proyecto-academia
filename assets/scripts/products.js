@@ -99,6 +99,8 @@ function mostrarProductos(productos) {
       const modalColores = modal.querySelectorAll(".modal-color");
       modalColores.forEach((color)=>{
         color.addEventListener("click",()=>{
+          modalColores.forEach((color) => color.classList.remove("selected"));
+          color.classList.add("selected");
           producto.colorSelect = color.getAttribute("color");
         })
       });
@@ -172,7 +174,9 @@ function mostrarCarrito() {
                                 <div class="product-info">
                                   ${producto.nombre}
                                   <p>Talla: ${producto.tallaSelect}</p>
-                                  <p>Color: ${producto.colorSelect}</p>
+                                  <div class="product-color">
+                                    <p>Color:</p><button class="modal-color" style="background-color: ${producto.color}"></button>
+                                  </div>
                                   <div class="product-quantity">
                                     <button class="decrease-button" index="${index}">-</button>
                                     <span class="quantity">${producto.cantidad}</span>
@@ -180,7 +184,7 @@ function mostrarCarrito() {
                                     <button class="remove-button" index="${index}"><i class="fa-solid fa-trash"></i></button>
                                   </div>
                                 </div>
-                                $${producto.precio * producto.cantidad} USD
+                                <p id="precio-producto">$${producto.precio * producto.cantidad} USD</p>
                               </li>`
                             )
                             .join("")}
@@ -189,7 +193,7 @@ function mostrarCarrito() {
                   <div class="modal-footer">
                       <div class="total-container">
                           <p>TOTAL</p>
-                          <p>
+                          <p id="precio-total">
                           $${carrito.reduce(
                             (total, producto) => total + (producto.precio * producto.cantidad),
                             0
@@ -293,9 +297,9 @@ function ordenarProductos(opcion) {
   const copiaArrayProductos = [...arrayProductos];
 
   if (opcion === "mayor") {
-    arrayProductos.sort((a, b) => a.precio - b.precio);
+    copiaArrayProductos.sort((a, b) => b.precio - a.precio);
   } else if (opcion === "menor") {
-    arrayProductos.sort((a, b) => b.precio - a.precio);
+    copiaArrayProductos.sort((a, b) => a.precio - b.precio);
   }
   mostrarProductos(copiaArrayProductos);
 }
